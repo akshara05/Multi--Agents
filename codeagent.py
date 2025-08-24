@@ -7,7 +7,7 @@ import os
 
 app = FastAPI()
 
-# GOOGLE_API_KEY="AIzaSyCy6yF6gdXlRDEaAT7sMM8t8A6dN8f_UHg"
+
 if not os.environ.get("GOOGLE_API_KEY"):
   os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter API key for Google Gemini: ")
 
@@ -157,3 +157,4 @@ def invoke_graph(request: QueryRequest):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
